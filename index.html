@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wielkanocne Życzenia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lavender;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: black;
+            margin-top: 20px;
+        }
+
+        .wishes {
+            font-size: 24px;
+            color: black;
+            margin: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Animacja opadających kwiatków */
+        .flower {
+            position: absolute;
+            top: -50px;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Tworzenie animacji na zegar */
+        .clock {
+            font-size: 30px;
+            color: pink;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Życzenia z okazji dnia dziecka</h1>
+    <div class="wishes">
+        Wesołego dnia dziecka!!!<br>
+        Z okazji dnia dziecka życzę wszystkim dzieciom dużo uśmiechu i beztroskiej zabawy oraz spełnienia wszystkich marzeń.
+    </div>
+
+ <img src="C:\Users\matic\OneDrive\Pulpit\małe jajko.png">
+
+    <!-- Zegar -->
+    <div class="clock" id="clock"></div>
+
+    <!-- Opadające Kwiatki -->
+    <img src="https://img.icons8.com/ios/50/000000/flower.png" class="flower" style="left: 10%; animation-delay: 0s;">
+    <img src="https://img.icons8.com/ios/50/000000/flower.png" class="flower" style="left: 30%; animation-delay: 1s;">
+    <img src="https://img.icons8.com/ios/50/000000/flower.png" class="flower" style="left: 50%; animation-delay: 2s;">
+    <img src="https://img.icons8.com/ios/50/000000/flower.png" class="flower" style="left: 70%; animation-delay: 3s;">
+    <img src="https://img.icons8.com/ios/50/000000/flower.png" class="flower" style="left: 90%; animation-delay: 4s;">
+
+    <script>
+        // Funkcja do aktualizacji zegara
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Aktualizowanie zegara co sekundę
+        setInterval(updateClock, 1000);
+
+        // Inicjalizacja zegara po załadowaniu strony
+        updateClock();
+    </script>
+</body>
+</html>
